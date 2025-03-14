@@ -10,12 +10,25 @@ def iterVirusSpread(N,P):
         P=P*2+1
     return P
 #O(n)
+#------------------------------------My version--------------------------------------------------
+
+def myRecVirusSpread(N,P):
+    if(N>0):
+        return myRecVirusSpread(N-1,P*3)
+    return P
+#O(n)
 
 
+def myIterVirusSpread(N,P):
+    for i in range(0,N):
+        P=P*3
+    return P
+#O(n)
 
 N=int(input("give the number of hours"))
 P=int(input("give the number of  infected computers"))
 print(recVirusSpread(N,P))
 print(iterVirusSpread(N,P))
-
+print(myRecVirusSpread(N,P))
+print(myIterVirusSpread(N,P))
 #the recurseve function is more complicated
